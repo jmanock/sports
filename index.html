@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>world map????</title>
+    <link rel="stylesheet" href="maps/dist/jqvmap.css" media='screen'>
+    <script src='http://code.jquery.com/jquery-1.11.3.min.js'></script>
+    <script src='maps/dist/jquery.vmap.js'></script>
+    <script src='maps/dist/maps/jquery.vmap.usa.js'></script>
+
+
+    <script>
+    $(document).ready(function(){
+      $('#vmap').vectorMap({
+        map:'usa_en',
+        backgroundColor:'#666666',
+        color:'#ffffff',
+        enableZoom:true,
+        showTooltip:true,
+        selectedColor:null,
+        hoverColor:null,
+        onRegionClick:function(event, code, region){
+          event.preventDefault();
+          console.log(code, region);
+        }
+      });
+    });
+    </script>
+  </head>
+  <body>
+    <div id='vmap' style='width:600px; height:400px;'></div>
+  </body>
+</html>
