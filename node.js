@@ -13,11 +13,14 @@ var something = new StattleshipAPI('cfccc6c4a2b20028fb66d881d406f4ca');
 // console.log(something.games);
 
 var params = {
-
+  team_id:'mlb-chc'
 };
-something.games('football', 'nfl', params).then(function(games){
-  games.forEach(function(e,i,a){
-    //console.log(e.scoreline, e.on);
-    console.log(e.title, e.on);
-  });
+something.team_outcome_streaks('baseball', 'mlb', params).then(function(games){
+  console.log(games);
+  // games.forEach(function(e,i,a){
+  //   //console.log(e.scoreline, e.on);
+  //   //console.log(e.title,e.on, e.scoreline);
+  //
+  //   console.log(e);
+  // });
 });
